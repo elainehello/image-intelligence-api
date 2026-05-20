@@ -3,6 +3,7 @@ package com.elainehello.imageintelligenceapi.service;
 import com.elainehello.imageintelligenceapi.client.HuggingFaceClient;
 import com.elainehello.imageintelligenceapi.dto.ImageAnalysisResponse;
 import com.elainehello.imageintelligenceapi.dto.ImageUploadResquest;
+import com.elainehello.imageintelligenceapi.exception.ImageNotFoundException;
 import com.elainehello.imageintelligenceapi.mapper.ImageAnalysisMapper;
 import com.elainehello.imageintelligenceapi.model.AnalysisStatus;
 import com.elainehello.imageintelligenceapi.model.ImageAnalysis;
@@ -35,7 +36,7 @@ public class ImageAnalysisService {
 
         triggerAnalysisAsync(saved.getId(), saved.getImageUrl());
 
-        return mapper.toResponseDto((saved);
+        return mapper.toResponseDto(saved);
     }
 
     @Async
