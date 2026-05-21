@@ -1,0 +1,8 @@
+# Environment variables — NEVER commit this
+.env
+
+# Other standard ignores
+target/
+*.class
+*.jar
+.DS_Store
