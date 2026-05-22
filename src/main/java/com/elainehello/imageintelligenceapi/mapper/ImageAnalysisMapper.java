@@ -7,21 +7,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class ImageAnalysisMapper {
 
-    public ImageAnalysisResponse toResponseDto(ImageAnalysis entity) {
-        return ImageAnalysisResponse.builder()
-                .id(entity.getId())
-                .imageUrl(entity.getImageUrl())
-                .status(entity.getStatus())
-                .prediction(entity.getPrediction())
-                .confidence(entity.getConfidence())
-                .createdAt(entity.getCreatedAt())
-                .updatedAt(entity.getCreatedAt())
-                .build();
+    public ImageAnalysisResponse toResponse(ImageAnalysis entity) {
+        ImageAnalysisResponse response = new ImageAnalysisResponse();
+        response.setId(entity.getId());
+        response.setImageUrl(entity.getImageUrl());
+        response.setStatus(entity.getStatus());
+        response.setPrediction(entity.getPrediction());
+        response.setConfidence(entity.getConfidence());
+        response.setCreatedAt(entity.getCreatedAt());
+        response.setUpdatedAt(entity.getUpdatedAt());
+        return response;
     }
 
     public ImageAnalysis toEntity(String imageUrl) {
-        return ImageAnalysis.builder()
-                .imageUrl(imageUrl)
-                .build();
+        ImageAnalysis analysis = new ImageAnalysis();
+        analysis.setImageUrl(imageUrl);
+        return analysis;
     }
 }

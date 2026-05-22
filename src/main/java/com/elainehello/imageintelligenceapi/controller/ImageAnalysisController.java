@@ -1,7 +1,7 @@
 package com.elainehello.imageintelligenceapi.controller;
 
 import com.elainehello.imageintelligenceapi.dto.ImageAnalysisResponse;
-import com.elainehello.imageintelligenceapi.dto.ImageUploadResquest;
+import com.elainehello.imageintelligenceapi.dto.ImageUploadRequest;
 import com.elainehello.imageintelligenceapi.service.ImageAnalysisService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class ImageAnalysisController {
 
     @PostMapping
     public ResponseEntity<ImageAnalysisResponse> uploadImage(
-            @Valid @RequestBody ImageUploadResquest request) {
+            @Valid @RequestBody ImageUploadRequest request) {
         log.info("POST /api/images - Received upload request");
         ImageAnalysisResponse response = service.submitImage(request);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(response);

@@ -9,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ImageUploadResquest {
+public class ImageUploadRequest {
 
     @NotBlank(message = "Image URL cannot be blank")
     @Pattern(
